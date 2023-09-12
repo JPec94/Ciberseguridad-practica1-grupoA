@@ -13,6 +13,10 @@ def hello_word():
 def hello_world():
     return "<p>Hello, World!</p>"
 
+@app.route("/api/<ticker>", methods=["GET"])
+def get_ticker(ticker):
+    return get_price(ticker)
+
 @app.route("/api/multiple/")
 def api_multiple():
     tickers = request.args.get('tickers')
